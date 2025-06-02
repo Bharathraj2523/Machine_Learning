@@ -11,13 +11,14 @@ from sklearn.model_selection import train_test_split
 
 from src.logger import logging
 from src.exception import CustomException
-from src.utils import predict_col , fill_voltage_current_power_irradiance
+from src.utils import predict_col , fill_voltage_current_power_irradiance ,save_object
 
 @dataclass
 class DataTransformationConfig:
     train_file_path = os.path.join("artifact","train.csv")
     test_file_path  = os.path.join("artifact" , "test.csv")
     cleaned_file_path = os.path.join("artifact" , "cleaned.csv")
+    preprocessor_file_path = os.path.join("artifact" ,"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -157,6 +158,8 @@ class DataTransformation:
 
     def initiate_data_transformation(self , raw_data_path):
 
+        self.data_trans_obj = DataTransformationConfig()
+
         logging.info("initiate data ingestion called")
         df = pd.read_csv(raw_data_path)
         logging.info(f"Read raw data with shape: {df.shape}")
@@ -201,6 +204,13 @@ class DataTransformation:
         # Save
         train_df_final.to_csv(self.data_transformation_config.train_file_path, index=False)
         test_df_final.to_csv(self.data_transformation_config.test_file_path, index=False)
+
+        #save preprocessor
+        save_object(
+            self.data_trans_obj.preprocessor_file_path,
+            preprocessor
+        )
+
 
 
         return (

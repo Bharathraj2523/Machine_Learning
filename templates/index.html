@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solar Energy Optimization</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      color: #333;
+      line-height: 1.6;
+      animation: fadeInBody 1s ease-in;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff9800, #f44336);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      animation: slideDown 1s ease-out;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #ffffffdd;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1.5s ease;
+    }
+
+    h2 {
+      color: #e65100;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 10px;
+      margin-top: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    section {
+      margin-top: 2rem;
+      animation: fadeInUp 2s ease;
+    }
+
+    footer {
+      background: #f5f5f5;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Animations */
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Solar Energy Optimization</h1>
+    <p>Maximize efficiency. Minimize loss. Power the future.</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>About the Project</h2>
+      <p>
+        This project uses a machine learning model to predict the efficiency of solar panels based on real-world input
+        parameters. It helps users make data-driven decisions to optimize solar power output and system performance.
+      </p>
+      <a href="/prediction" class="btn">→ Start Efficiency Prediction</a>
+    </section>
+
+    <section>
+      <h2>Insights from EDA</h2>
+      <p>We analyzed real solar system data and uncovered key patterns:</p>
+      <ul>
+        <li>📉 High panel temperatures reduce efficiency.</li>
+        <li>🧹 Regular maintenance (cleaning) boosts power retention.</li>
+        <li>🔋 Stable voltage/current under high irradiance yields optimal output.</li>
+        <li>🌫️ Soiling and cloud coverage play significant roles in energy loss.</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Built by Boss | © 2025 Solar ML Toolkit | Powered by XGBoost & Flask
+  </footer>
+
+</body>
+</html>
