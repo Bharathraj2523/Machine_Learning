@@ -8,7 +8,7 @@ from src.logger    import logging
 
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
-
+from src.components.model_trainer       import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
@@ -44,6 +44,12 @@ if __name__ == "__main__":
     print(raw_path)
 
     trans_obj = DataTransformation()
-    x , y = trans_obj.initiate_data_transformation(raw_path)
-    print(x)
+    x_path , y_path = trans_obj.initiate_data_transformation(raw_path)
+
+    print(x_path)
+
+    train_obj = ModelTrainer()
+    print(f"R2 Score is {train_obj.initiate_model_trainer(x_path,y_path)}")
+
+
 
